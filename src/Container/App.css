@@ -1,0 +1,21 @@
+.App {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      to bottom,
+      rgba(62, 20, 20, 0.45) 0%,
+      rgba(62, 20, 20, 0.45) 100%
+    ),
+    url("../Components/assets/img/back.jpg") center;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerBox {
+  background-color: white;
+  width: 80%;
+  height: 550px;
+  box-shadow: +2px +5px 10px 0px black;
+}

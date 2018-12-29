@@ -1,0 +1,104 @@
+.players {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "player-1 menu player-2";
+}
+
+.player1 {
+    grid-area: player-1;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+
+.menu {
+    display: grid;
+    grid-area: menu;
+    height: 500px;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
+    grid-template-areas: 
+    "new"
+    "input"
+    "dice"
+    "roll"
+    "hold"
+}
+
+.menu .new {
+    grid-area: new;
+    align-self: flex-start;
+}
+
+.menu .roll {
+    grid-area: roll;
+    user-select: none;
+    align-self: center;
+}
+
+.menu .hold {
+    grid-area: hold;
+}
+
+.player2 {
+    grid-area: player-2;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+
+.btn {
+    width: 200px;
+    left: 50%;
+    color: #555;
+    background: none;
+    border: none;
+    font-family: Lato;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 300;
+}
+
+.menu .default {
+    grid-area: input;
+    justify-items: center;
+}
+
+.menu input {
+    justify-self: center;
+    width: 200px;
+    height: 30px;
+    padding:0;
+}
+
+.active { background-color: #f7f7f7; }
+
+.active .player-name { font-weight: 300; }
+
+.active .player-name::after {
+    content: "\2022";
+    font-size: 47px;
+    color: #EB4D4D;
+    margin-left: 10px;  
+}
+
+.winner { 
+    background-color: #f7f7f7; 
+}
+
+.winner .player-name { 
+    font-weight: 300; 
+    color: #EB4D4D; 
+}
