@@ -45,7 +45,7 @@ export const getRandomNumber = (active, unactive) => {
   };
 };
 
-export const setScore = (player, unactive, score, total) => {
+export const setScore = (player, unactive, score) => {
   if (score) {
     return dispatch => {
       dispatch({ type: actionTypes.SET_SCORE, player, score });

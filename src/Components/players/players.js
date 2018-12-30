@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 import Player from "./player/player";
 import Dice from "Components/dice/dice";
@@ -31,6 +31,8 @@ const Players = ({
     );
   });
 
+  const inputRef = useRef(null)
+
   const [errorLimit, setErrorLimit] = useState(false);
   const [inputStatus, setInputStatus] = useState(false);
 
@@ -44,6 +46,14 @@ const Players = ({
       setErrorLimit(true);
     }
   };
+
+
+  const startNewGame = async () => {
+    setNewGame()
+    await setInputStatus(false)
+    inputRef.current.focus()
+    inputRef.current.value = '';
+  }
 
   const startGame = () => {
     getRandomNumber(active, unactive);
@@ -64,7 +74,7 @@ const Players = ({
         {map[0]}
       </div>
       <div className="menu">
-        <button className="btn new" onClick={() => setNewGame()}>
+        <button className="btn new" onClick={() => startNewGame()}>
           new game
         </button>
         {errorLimit ? (
@@ -72,6 +82,7 @@ const Players = ({
         ) : null}
         <div className="default">
           <input
+            ref={inputRef}
             disabled={inputStatus}
             type="text"
             placeholder="Default 100pts"
